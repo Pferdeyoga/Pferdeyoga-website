@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tensegrales Training für Pferde | Yoga für Dein Pferd – Braunschweig</title>
+<meta name="description" content="Tensegrales Training vom Boden: Stabilität, Mobilität und Balance für Sport-, Freizeit- und Seniorpferde. Einzeltraining, Online-Coaching und MagnaWave-Magnetfeldtherapie im Raum Braunschweig.">
+<style>
+@font-face{
+  font-family:'Great Vibes';
+  src:url('fonts/great-vibes-latin-400-normal.woff2') format('woff2');
+  font-weight:400;font-style:normal;font-display:swap;
+}
+:root{
+  --blue-900:#122e3a; --blue:#1a3d4c; --blue-700:#224e60;
+  --green:#7cc044; --green-dark:#6aaa3a;
+  --cream:#f4f0e7; --mint:#eef5f0; --white:#fff; --text:#d8e2e7;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:var(--text);line-height:1.65;background:var(--blue-900)}
+h1,h2,h3{color:#fff;line-height:1.25}
+h2{font-size:clamp(1.5rem,3vw,2.1rem);margin-bottom:.75rem}
+h3{font-size:1.15rem;margin-bottom:.5rem}
+p{margin-bottom:1rem}
+a{color:var(--green)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+section{padding:4rem 0}
+.kicker{color:var(--green);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:.85rem;margin-bottom:.4rem}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:var(--blue-900);color:#fff;border-bottom:1px solid rgba(255,255,255,.12)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:.8rem 1.25rem;max-width:1080px;margin:0 auto;flex-wrap:wrap;gap:.5rem}
+.logo{font-weight:700;font-size:1.05rem;color:#fff;text-decoration:none}
+.logo span{color:var(--green)}
+.nav ul{display:flex;list-style:none;gap:1.4rem;flex-wrap:wrap}
+.nav a{color:#e8eef1;text-decoration:none;font-size:.95rem}
+.nav a:hover{color:var(--green)}
+
+/* Hero */
+.hero{position:relative;color:#fff;padding:0}
+.hero img{width:100%;height:min(72vh,560px);object-fit:cover;object-position:center top;display:block}
+.hero .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,46,58,.35) 0%,rgba(18,46,58,.88) 100%);display:flex;align-items:flex-end}
+.hero-inner{max-width:1080px;margin:0 auto;padding:2.5rem 1.25rem;width:100%}
+.hero h1{color:#fff;font-size:clamp(1.35rem,3vw,1.9rem);margin-bottom:.5rem;text-shadow:0 2px 8px rgba(0,0,0,.4)}
+.hero h1 .name{display:block;font-family:'Great Vibes',cursive;font-weight:400;font-size:clamp(3rem,7.5vw,4.8rem);color:var(--green);line-height:1.15;margin-bottom:.3rem}
+.hero p{font-size:clamp(1rem,2vw,1.2rem);max-width:640px;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.btn{display:inline-block;background:var(--green);color:var(--blue-900);font-weight:700;padding:.85rem 1.7rem;border-radius:999px;text-decoration:none;margin-top:.75rem;transition:background .2s}
+.btn:hover{background:var(--green-dark);color:#fff}
+.btn.ghost{background:transparent;border:2px solid var(--green);color:#fff;margin-left:.6rem}
+.btn.ghost:hover{background:var(--green);color:var(--blue-900)}
+
+/* Claim-Band */
+.claims{background:var(--green);color:var(--blue-900);padding:1.1rem 0;text-align:center;font-size:1.02rem;font-weight:600}
+.claims b{color:var(--blue-900)}
+
+/* Cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;margin-top:1.5rem}
+.card{background:var(--blue);border-radius:14px;padding:1.5rem;border-top:4px solid var(--green)}
+.card h3{color:var(--green)}
+.card ul{margin:.25rem 0 0 1.1rem}
+.card li{margin-bottom:.35rem}
+
+/* Zweispalter */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
+.split img{width:100%;max-height:520px;object-fit:cover;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,.45)}
+.split img.portrait{width:auto;max-width:min(100%,400px);max-height:560px;object-fit:contain;display:block;margin:0 auto}
+.split img.dezent{width:auto;max-width:min(100%,280px);max-height:320px;object-fit:contain;display:block;margin:0 auto;opacity:.92}
+@media(max-width:760px){.split{grid-template-columns:1fr}}
+
+.bg-cream{background:var(--blue)}
+.bg-mint{background:var(--blue)}
+
+/* Preise */
+.pricegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.25rem;margin-top:1.5rem}
+.pricebox{background:var(--blue);border-radius:14px;padding:1.5rem;box-shadow:0 4px 18px rgba(0,0,0,.35);display:flex;flex-direction:column;border-top:4px solid var(--green)}
+.pricebox h3{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;color:#fff}
+.pricebox .preis{color:var(--green);font-size:1.25rem;white-space:nowrap}
+.pricebox .sub{font-size:.9rem;color:#a9bcc5}
+table.prices{width:100%;border-collapse:collapse;margin-top:.6rem;font-size:.95rem}
+table.prices td{padding:.45rem 0;border-bottom:1px solid rgba(255,255,255,.15);vertical-align:top}
+table.prices td:last-child{text-align:right;font-weight:700;color:var(--green);white-space:nowrap}
+.hinweis{font-size:.9rem;color:#a9bcc5;margin-top:1.2rem}
+
+/* Über mich Liste */
+.facts{list-style:none;margin:.5rem 0 1rem}
+.facts li{padding-left:1.6rem;position:relative;margin-bottom:.55rem}
+.facts li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:700}
+.chart-platzhalter{background:rgba(255,255,255,.06);border:2px dashed var(--green);border-radius:14px;padding:1.4rem;text-align:center;color:#c9d8de;font-size:.95rem;margin-top:1.2rem}
+
+/* Zitat */
+.zitat{background:var(--blue-700);padding:3.5rem 0;text-align:center}
+.zitat blockquote{max-width:680px;margin:0 auto;padding:0 1.25rem;font-size:clamp(1.1rem,2.2vw,1.4rem);font-style:italic;color:#fff;line-height:1.6}
+.zitat blockquote::before{content:"\201E";display:block;font-size:3rem;color:var(--green);line-height:1;font-style:normal}
+.zitat cite{display:block;margin-top:1rem;font-size:.95rem;font-style:normal;color:var(--green)}
+
+/* Kontakt */
+.kontakt{background:var(--blue);color:#dfe9ee;text-align:center}
+.kontakt h2{color:#fff}
+.kontakt a.big{color:var(--green);font-size:1.15rem;font-weight:700;text-decoration:none}
+.kontakt p{max-width:620px;margin-left:auto;margin-right:auto}
+
+/* Footer */
+footer{background:var(--blue-900);color:#9db4be;font-size:.88rem;border-top:1px solid rgba(255,255,255,.12);padding:1.3rem 0;text-align:center}
+footer a{color:#c9d8de;text-decoration:none;margin:0 .6rem}
+footer a:hover{color:var(--green)}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a class="logo" href="#top">Pferdeyoga <span>·</span> Susanne Griese</a>
+    <ul>
+      <li><a href="#training">Tensegrales Training</a></li>
+      <li><a href="#magnetfeldtherapie">Magnetfeldtherapie</a></li>
+      <li><a href="#ueber-mich">Über mich</a></li>
+      <li><a href="preise.html">Preise</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="hero" id="top">
+  <img src="img/hero.jpg" alt="Susanne Griese sitzt zwischen ihren beiden Pferden">
+  <div class="overlay">
+    <div class="hero-inner">
+      <h1><span class="name">Susanne Griese</span>Tensegrales Training und gesunderhaltende Körperarbeit</h1>
+      <p>Sanfte, effektive Basisarbeit für Mobilität, Stabilität und Balance – reitweisenunabhängig für Sport-, Freizeit- und Seniorpferde. Mobil im Raum Braunschweig.</p>
+      <a class="btn" href="#kontakt">Termin anfragen</a>
+      <a class="btn ghost" href="#tensegrales-angebot">Mein Angebot</a>
+    </div>
+  </div>
+</div>
+
+<div class="claims"><b>Effektiv. Sanft. Nachhaltig.</b></div>
+
+<section id="training">
+  <div class="wrap">
+    <p class="kicker">Das Konzept</p>
+    <h2>Was ist tensegrales Training?</h2>
+    <div class="split">
+      <div>
+        <p>Tensegrales Training ist vergleichbar mit Yoga beim Menschen: Es baut eine positive Grundspannung und Stabilität im gesamten Pferdekörper auf und erhöht gleichzeitig die Mobilität – damit Bewegungen verschleißarm, koordiniert und motiviert ausgeführt werden.</p>
+        <p>Die Arbeit verbindet Elemente aus Faszienarbeit, Physiotherapie und Longentraining und ist eine fundierte Basisarbeit, damit Dein Pferd seine Aufgaben nachhaltig und gesund erfüllen kann. Gleichzeitig fördert sie Harmonie und Verbindung zwischen Mensch und Pferd.</p>
+        <p>Ein Bild aus dem Alltag: Viele Pferde bewegen sich wie ein Auto mit angezogener Handbremse – es geht vorwärts, aber mit unnötigem Verschleiß. Im Training lösen wir zuerst diese Bremse und schalten dann Schritt für Schritt den Allradantrieb ein: Die Kraft kommt aus dem ganzen Körper. Wie schnell die Fortschritte kommen und wann die Anforderungen steigen, gibt dabei Dein Pferd vor – es wird nicht in eine Form gepresst, sondern baut Stabilität und Beweglichkeit in seinem eigenen Lerntempo auf.</p>
+      </div>
+      <img class="dezent" src="img/tensegrity-modell.jpg" alt="Tensegrity-Modell – Prinzip aus Zug- und Druckelementen">
+    </div>
+    <div class="cards">
+      <div class="card">
+        <h3>Wie läuft es ab?</h3>
+        <p>Wir arbeiten vom Boden aus. Zunächst mit lösenden Übungen im Stand und der Bewegung. An der Hand und an der Longe setzt Dein Pferd neue Bewegungsmuster um und lernt, sich eigenständig zu stabilisieren. Eine Einheit dauert ca. 60–90 Minuten.</p>
+      </div>
+      <div class="card">
+        <h3>Für wen ist es geeignet?</h3>
+        <ul>
+          <li>Sport- und Freizeitpferde, Gesunderhaltung von Senioren</li>
+          <li>wechselnde, unklare Lahmheiten oder Widersetzlichkeiten</li>
+          <li>hypermobile oder stark verspannte Pferde</li>
+          <li>ECVM, HWS-Arthrosen, Trageschwäche</li>
+          <li>Antrainieren nach Verletzungspausen</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>PEMF-Magnetfeldtherapie</h3>
+        <p>Mit dem MagnaWave Semi 10 unterstütze ich Regeneration und Wohlbefinden: pulsierende Magnetfeldtherapie als Einzelbehandlung oder ideal in Kombination mit dem Training. <a href="#magnetfeldtherapie">Mehr zur Magnetfeldtherapie</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ueber-mich" class="bg-cream">
+  <div class="wrap split">
+    <img class="portrait" src="img/susanne.jpg" alt="Susanne Griese mit Pferd">
+    <div>
+      <p class="kicker">Über mich</p>
+      <h2>Susanne Griese</h2>
+      <p><strong>Zertifizierte Horse Tensegrity Trainerin (HTT) · PEMF-Therapeutin MagnaWave</strong></p>
+      <p>Meine Mission: Pferdebesitzer befähigen, ihr Pferd nachhaltig fit und motiviert zu halten – und Trainingsprobleme mit neuen Augen zu sehen.</p>
+      <p>Von mir bekommst Du ehrliches, wertschätzendes Feedback zu Deinem Pferd – verständlich erklärt, mit Bildern aus dem Alltag statt Vorträgen. Und weil Lernen mit Freude am besten gelingt, gehören Leichtigkeit und Spaß für Pferd und Mensch bei mir fest dazu.</p>
+      <ul class="facts">
+        <li>Über 38 Jahre Pferdeerfahrung</li>
+        <li>Dressurausbildung bis Klasse L/M</li>
+        <li>Seit 2023 Kurse und Hospitationen bei Horse Tensegrity Trainern</li>
+        <li>Seit 2025 mobil als Trainerin mit eigenen und Kundenpferden</li>
+        <li>PEMF-Therapeutin (MagnaWave Semi 10)</li>
+      </ul>
+      <div class="chart-platzhalter">Hier folgt in Kürze eine Grafik zu meinem Werdegang und meinen Ausbildungen.</div>
+    </div>
+  </div>
+</section>
+
+<div class="zitat">
+  <blockquote>
+    Ein Pferd, das sich in deine Hände gibt, schenkt dir etwas Wertvolles. Behandle es mit Herz, mit Verantwortung und mit Demut.
+    <cite>— Tommy Freundlich, Horsemanship</cite>
+  </blockquote>
+</div>
+
+<section id="tensegrales-angebot">
+  <div class="wrap">
+    <p class="kicker">Angebot</p>
+    <h2>Tensegrales Training – vor Ort oder online</h2>
+    <div class="split">
+      <img src="img/training.jpg" alt="Susanne Griese beim tensegralen Training mit einem Pferd">
+      <div>
+        <p>Ob regelmäßiges Einzeltraining oder kompakter Kurs: Wir arbeiten an Balance, Beweglichkeit und feiner Kommunikation – individuell abgestimmt auf Dich und Dein Pferd.</p>
+      </div>
+    </div>
+    <div class="cards">
+      <div class="card" id="vor-ort">
+        <h3>Training vor Ort</h3>
+        <p>Einzelunterricht, Tages- und Wochenendkurse. Bis 40 km um Braunschweig, Kurse deutschlandweit auf Anfrage. Auf Wunsch mit MagnaWave-Behandlung im selben Termin.</p>
+      </div>
+      <div class="card" id="online-coaching">
+        <h3>Online-Coaching-Paket</h3>
+        <p>Ortsunabhängig: detaillierte Körper- und Bewegungsanalyse, kommentierte Trainingsvideos, Zoom-Besprechungen und Abschluss-Dokumentation mit individuellem Trainingsplan – ab 449 €, genauer Preis auf Anfrage.</p>
+      </div>
+    </div>
+    <a class="btn" href="preise.html">Alle Preise ansehen</a>
+  </div>
+</section>
+
+<section id="magnetfeldtherapie">
+  <div class="wrap">
+    <p class="kicker">Angebot</p>
+    <h2>MagnaWave-Magnetfeldtherapie</h2>
+    <div class="split">
+      <div>
+        <p><strong>Die perfekte Ergänzung zum Körpertraining.</strong> Pulsierende Magnetfeldtherapie (PEMF) mit dem MagnaWave Semi 10 unterstützt Regeneration und Wohlbefinden – als Einzelbehandlung oder direkt im Anschluss ans Training.</p>
+      </div>
+      <img src="img/magnawave.jpg" alt="MagnaWave-Loop bei der PEMF-Behandlung auf dem Pferderücken">
+    </div>
+    <div class="cards">
+      <div class="card">
+        <h3>Behandlung vor Ort</h3>
+        <p>Ganzkörperbehandlung plus individuelle Lokalanwendung – als Einzeltermin oder vergünstigt direkt im Anschluss ans Training, auch für Stallkollegen am selben Tag.</p>
+      </div>
+      <div class="card">
+        <h3>Geräteverleih</h3>
+        <p>Das MagnaWave Semi 10 wochenweise mieten – mit Anlieferung, Einweisung und Erstbehandlung durch mich.</p>
+      </div>
+    </div>
+    <a class="btn" href="preise.html">Alle Preise ansehen</a>
+  </div>
+</section>
+
+<section id="kontakt" class="kontakt">
+  <div class="wrap">
+    <h2>Termin anfragen</h2>
+    <p>Du möchtest tensegrales Training oder eine MagnaWave-Behandlung für Dein Pferd? Ruf an oder schreib mir – ich melde mich zeitnah zurück. Auch zwischendurch bin ich per WhatsApp für Deine Fragen erreichbar.</p>
+    <p>
+      <a class="big" href="tel:+4917625584618">0176&nbsp;25584618</a><br>
+      <a class="big" href="https://wa.me/4917625584618" target="_blank" rel="noopener">WhatsApp schreiben</a><br>
+      <a class="big" href="mailto:pferdeyoga-sg@gmx.de">pferdeyoga-sg@gmx.de</a>
+    </p>
+    <p>Mobil im Raum Braunschweig · Instagram: <a class="big" href="https://www.instagram.com/pferdeyoga.tensegrity" target="_blank" rel="noopener">@pferdeyoga.tensegrity</a></p>
+    <a class="btn" href="mailto:pferdeyoga-sg@gmx.de?subject=Terminanfrage%20Tensegrales%20Training">Jetzt Termin anfragen</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Körpertraining für Pferde – Susanne Griese · Braunschweig<br>
+    <a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a> | <a href="recht/AGB_Training_vor_Ort.pdf" target="_blank">AGB Training</a> | <a href="recht/AGB_MagnaWave_Geraeteleihe.pdf" target="_blank">AGB Geräteleihe</a> | <a href="recht/Widerrufsbelehrung.pdf" target="_blank">Widerrufsbelehrung</a>
+  </div>
+</footer>
+
+</body>
+</html>
