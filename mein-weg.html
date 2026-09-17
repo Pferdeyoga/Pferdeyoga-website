@@ -34,7 +34,8 @@ a{color:var(--green)}
 
 header{position:sticky;top:0;z-index:50;background:var(--blue-900);color:#fff;border-bottom:1px solid rgba(255,255,255,.12)}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:.8rem 1.25rem;max-width:1080px;margin:0 auto;flex-wrap:wrap;gap:.5rem}
-.logo{font-weight:700;font-size:1.05rem;color:#fff;text-decoration:none}
+.logo{display:flex;align-items:center;gap:.55rem;font-weight:700;font-size:1.05rem;color:#fff;text-decoration:none}
+.logo-mark{height:2.1rem;width:auto;flex-shrink:0}
 .logo span{color:var(--green)}
 .nav ul{display:flex;list-style:none;gap:1.4rem;flex-wrap:wrap}
 .nav a{color:#e8eef1;text-decoration:none;font-size:.95rem}
@@ -66,7 +67,7 @@ footer a:hover{color:var(--green)}
 
 <header>
   <nav class="nav">
-    <a class="logo" href="index.html">Pferdeyoga <span>·</span> Susanne Griese</a>
+    <a class="logo" href="index.html"><img class="logo-mark" src="img/logo/sg-bildmarke.svg" alt="">Pferdeyoga <span>·</span> Susanne Griese</a>
     <ul>
       <li><a href="index.html#training">Tensegrales Training</a></li>
       <li><a href="index.html#magnetfeldtherapie">Magnetfeldtherapie</a></li>
