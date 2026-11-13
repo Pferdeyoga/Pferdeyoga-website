@@ -190,7 +190,7 @@ footer a:hover{color:var(--green)}
       <div class="card"><h3>Kunden und Pferde</h3><p>Jedes Pferd hat ein Profil mit Besitzer, Telefonnummer, Notizen und dem Verlauf aller Einheiten. Mit der Suche findest du Pferd oder Kunde in Sekunden.</p></div>
       <div class="card"><h3>Liste und Kalender</h3><p>Alle Protokolle siehst du als Liste oder im Monatskalender. Die Startseite zeigt dir die Einheiten von heute.</p></div>
       <div class="card"><h3>Datensicherung</h3><p>Du exportierst alle Daten als Datei und kannst sie wieder einlesen. Für deine Sicherungen bist du selbst zuständig.</p></div>
-      <div class="card"><span class="badge-inline">Cloud-Version</span><h3>Mehrere Geräte</h3><p>In der Cloud-Version gleicht die App deine Daten zwischen Handy, Tablet und PC ab. Der Speicher ist dein eigenes Konto, eingerichtet nach meiner Anleitung.</p></div>
+      <div class="card"><h3>Ein Gerät oder mehrere</h3><p>Die App gleicht deine Daten zwischen Handy, Tablet und PC ab. Der Speicher dafür ist dein eigenes Cloud-Konto, eingerichtet nach meiner Anleitung. Du kannst sie genauso gut nur auf einem Gerät nutzen.</p></div>
       <div class="card"><span class="badge-inline">Optional</span><h3>KI-Spracherkennung</h3><p>Wer möchte, verbindet die App mit einem eigenen Konto bei einem Anbieter für Spracherkennung. Dann nimmst du direkt in der App auf. Das ist freiwillig und kostet beim Anbieter nach Verbrauch.</p></div>
     </div>
   </div>
@@ -214,7 +214,7 @@ footer a:hover{color:var(--green)}
       <h2>Deins. <span class="zier">Ohne</span> Abo.</h2>
       <ul class="facts">
         <li>Einmal kaufen, dauerhaft nutzen.</li>
-        <li>Deine Kundendaten liegen auf deinem Gerät oder in deinem eigenen Speicher. Ich habe keinen Zugriff darauf.</li>
+        <li>Deine Kundendaten liegen auf deinen Geräten und in deinem eigenen Cloud-Konto. Ich habe keinen Zugriff darauf.</li>
         <li>Läuft auf iPhone und Android als App auf dem Startbildschirm, ohne App Store. Am PC im Browser.</li>
         <li>Die Einrichtung machst du einmalig selbst, mit einer bebilderten Schritt-für-Schritt-Anleitung. Plane dafür etwa 30 Minuten ein.</li>
       </ul>
@@ -228,8 +228,7 @@ footer a:hover{color:var(--green)}
     <h2>Laufende Kosten: aktueller Stand</h2>
     <p>Nach dem Kauf fallen nach aktuellem Stand (November 2026) keine laufenden Kosten für die App an. Im Einzelnen:</p>
     <table class="prices">
-      <tr><td>Lokale Version</td><td>Läuft ohne fremde Dienste auf deinem Gerät. Keine laufenden Kosten.</td></tr>
-      <tr><td>Cloud-Version</td><td>Nutzt deine eigenen Konten bei Supabase (Datenspeicher) und Cloudflare (Bereitstellung der App). Beide Anbieter haben aktuell einen kostenlosen Tarif, auf den meine Anleitung ausgelegt ist.</td></tr>
+      <tr><td>App und Speicher</td><td>Die App nutzt deine eigenen Konten bei Supabase (Datenspeicher) und Cloudflare (Bereitstellung der App). Beide Anbieter haben aktuell einen kostenlosen Tarif, auf den meine Anleitung ausgelegt ist.</td></tr>
       <tr><td>KI-Spracherkennung</td><td>Freiwillige Zusatzfunktion mit eigener Registrierung beim Anbieter. Abgerechnet wird nach Verbrauch direkt zwischen dir und dem Anbieter. Ohne sie nutzt du die kostenlose Diktierfunktion deines Geräts.</td></tr>
     </table>
     <div class="kasten">
@@ -239,15 +238,32 @@ footer a:hover{color:var(--green)}
   </div>
 </section>
 
-<section id="bestellen">
+<section id="datenschutz">
+  <div class="wrap">
+    <p class="kicker">Datenschutz</p>
+    <h2>Deine Kundendaten, deine Verantwortung</h2>
+    <p>In der App speicherst du personenbezogene Daten deiner Kunden, zum Beispiel Namen, Telefonnummern, Notizen und Fotos. Diese Daten liegen ausschließlich bei dir: auf deinen Geräten und in deinem eigenen Cloud-Konto. Ich als Verkäuferin der Software habe darauf keinen Zugriff und verarbeite sie nicht.</p>
+    <div class="kasten">
+      <p><strong>Das heißt für dich:</strong> Datenschutzrechtlich bist du selbst verantwortlich für die Daten deiner Kunden (Verantwortlicher im Sinne der DSGVO). Du regelst eigenständig,</p>
+      <ul class="facts">
+        <li>dass deine Kunden über die Speicherung ihrer Daten informiert sind, zum Beispiel in deiner eigenen Datenschutzerklärung,</li>
+        <li>dass du Einwilligungen einholst, wo sie nötig sind, etwa für Fotos,</li>
+        <li>dass die Nutzung des Cloud-Speichers für deine Kundendaten zulässig ist, einschließlich der dafür nötigen Vereinbarung mit dem Cloud-Anbieter.</li>
+      </ul>
+      <p>Ich übernehme dafür keine Verantwortung und kann dazu keine Rechtsberatung geben. Einzelheiten stehen in § 11 der <a href="recht/AGB_TrainingsDoku_Pro.pdf" target="_blank">AGB TrainingsDoku Pro</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section id="bestellen" class="bg">
   <div class="wrap split" style="align-items:start">
     <div class="pricebox">
       <p class="kicker">Einmaliger Kaufpreis</p>
       <p class="preis-gross">89 €</p>
-      <p class="sub">inkl. 19 % MwSt. · kein Abo · lokale Version oder Cloud-Version</p>
+      <p class="sub">inkl. 19 % MwSt. · kein Abo</p>
       <p class="einf">Einführungspreis: die ersten 10 Bestellungen zahlen <b>69 €</b></p>
       <p class="sub">Ob du noch zu den ersten 10 gehörst, schreibe ich dir mit der Rechnung.</p>
-      <a class="btn" href="mailto:pferdeyoga-sg@gmx.de?subject=Bestellung%20TrainingsDoku%20Pro&amp;body=Hallo%20Susanne%2C%0A%0Aich%20bestelle%20TrainingsDoku%20Pro.%0A%0AVariante%20%28bitte%20eine%20stehen%20lassen%29%3A%20Lokale%20Version%20/%20Cloud-Version%0AMein%20Handy%3A%20iPhone%20/%20Android%0A%0AFirma%20oder%20Praxisname%3A%0AMeine%20T%C3%A4tigkeit%20%28z.%20B.%20Pferdetrainer%2C%20Pferdephysiotherapeut%2C%20Pferdeosteopath%29%3A%0ARechnungsadresse%3A%0AUSt-IdNr.%20%28falls%20vorhanden%29%3A%0A%0AIch%20bestelle%20als%20Unternehmer%20im%20Rahmen%20meiner%20gewerblichen%20oder%20selbstst%C3%A4ndigen%20beruflichen%20T%C3%A4tigkeit%20und%20nicht%20als%20Verbraucher%20im%20Sinne%20des%20%C2%A7%2013%20BGB.%0A%0ADie%20AGB%20und%20die%20Lizenzbedingungen%20f%C3%BCr%20TrainingsDoku%20Pro%20habe%20ich%20gelesen%20und%20akzeptiere%20sie.%0A%0AViele%20Gr%C3%BC%C3%9Fe%0A">Per E-Mail bestellen</a>
+      <a class="btn" href="mailto:pferdeyoga-sg@gmx.de?subject=Bestellung%20TrainingsDoku%20Pro&amp;body=Hallo%20Susanne%2C%0A%0Aich%20bestelle%20TrainingsDoku%20Pro.%0A%0AMein%20Handy%3A%20iPhone%20/%20Android%0A%0AFirma%20oder%20Praxisname%3A%0AMeine%20T%C3%A4tigkeit%20%28z.%20B.%20Pferdetrainer%2C%20Pferdephysiotherapeut%2C%20Pferdeosteopath%29%3A%0ARechnungsadresse%3A%0AUSt-IdNr.%20%28falls%20vorhanden%29%3A%0A%0AIch%20bestelle%20als%20Unternehmer%20im%20Rahmen%20meiner%20gewerblichen%20oder%20selbstst%C3%A4ndigen%20beruflichen%20T%C3%A4tigkeit%20und%20nicht%20als%20Verbraucher%20im%20Sinne%20des%20%C2%A7%2013%20BGB.%0A%0ADie%20AGB%20und%20die%20Lizenzbedingungen%20f%C3%BCr%20TrainingsDoku%20Pro%20habe%20ich%20gelesen%20und%20akzeptiere%20sie.%0A%0AMir%20ist%20bekannt%2C%20dass%20ich%20f%C3%BCr%20den%20Datenschutz%20gegen%C3%BCber%20meinen%20eigenen%20Kunden%20selbst%20verantwortlich%20bin.%0A%0AViele%20Gr%C3%BC%C3%9Fe%0A">Per E-Mail bestellen</a>
       <p class="hinweis"><strong>Nur für Unternehmer.</strong> Mit der Bestellung bestätigst du, dass du als Unternehmer im Rahmen deiner gewerblichen oder selbstständigen beruflichen Tätigkeit kaufst und nicht als Verbraucher im Sinne des § 13 BGB.</p>
       <p class="hinweis">Es gelten die <a href="recht/AGB_TrainingsDoku_Pro.pdf" target="_blank">AGB TrainingsDoku Pro</a> und die <a href="recht/Lizenz_TrainingsDoku_Pro.pdf" target="_blank">Lizenz- und Nutzungsbedingungen</a>. Hinweise zum Umgang mit deinen Daten stehen in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
     </div>
@@ -255,14 +271,13 @@ footer a:hover{color:var(--green)}
       <p class="kicker">Bestellung</p>
       <h2>So kommst du an die App</h2>
       <ol class="steps">
-        <li><strong>Bestell-Mail schicken.</strong> Der Knopf öffnet eine vorbereitete E-Mail. Du trägst Variante, Firma oder Praxisname, deine Tätigkeit und die Rechnungsadresse ein.</li>
+        <li><strong>Bestell-Mail schicken.</strong> Der Knopf öffnet eine vorbereitete E-Mail. Du trägst Firma oder Praxisname, deine Tätigkeit und die Rechnungsadresse ein.</li>
         <li><strong>Rechnung erhalten.</strong> Ich schicke dir die Rechnung per E-Mail. Bezahlt wird per Vorkasse (Überweisung).</li>
         <li><strong>App bekommen.</strong> Nach Zahlungseingang erhältst du die App mit Anleitung per E-Mail, in der Regel innerhalb von 48 Stunden.</li>
         <li><strong>Einrichten und loslegen.</strong> Du folgst der Anleitung für iPhone oder Android und legst die App auf deinen Startbildschirm. Das dauert etwa 30 Minuten.</li>
       </ol>
       <div class="kasten"><p><strong>Hinweis:</strong> Die App wird nicht über den App Store vertrieben. Du richtest die Anwendung selbst ein und musst dafür einmalig ein wenig basteln. Mit der zugehörigen Anleitung dauert das etwa 30 min, danach läuft sie.</p></div>
       <p class="hinweis">Der Knopf funktioniert nicht? Schreib mir an <a href="mailto:pferdeyoga-sg@gmx.de">pferdeyoga-sg@gmx.de</a> mit dem Betreff „Bestellung TrainingsDoku Pro“.</p>
-      <p class="hinweis">Für den Datenschutz gegenüber deinen eigenen Kunden bist du selbst verantwortlich, zum Beispiel für die Einwilligung zu Fotos.</p>
     </div>
   </div>
 </section>
