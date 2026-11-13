@@ -90,6 +90,30 @@ table.prices{width:100%;border-collapse:collapse;margin-top:.6rem;font-size:.95r
 table.prices td{padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.15);vertical-align:top}
 table.prices td:first-child{padding-right:1rem;color:#fff;font-weight:600;width:34%}
 
+.bform{background:var(--blue);border-radius:14px;padding:1.75rem;border-top:4px solid var(--green);margin-top:1.2rem}
+.bform fieldset{border:0;margin:0 0 1.6rem}
+.bform legend{color:#fff;font-weight:700;font-size:1.1rem;margin-bottom:.6rem}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:.9rem 1.2rem}
+.grid2 .voll{grid-column:1/-1}
+@media(max-width:620px){.grid2{grid-template-columns:1fr}}
+.bform label{display:block;font-size:.92rem;color:#fff}
+.bform input[type=text],.bform input[type=email],.bform input[type=tel],.bform select,.bform textarea{display:block;width:100%;margin-top:.3rem;padding:.65rem .8rem;border-radius:10px;border:1px solid #3d6576;background:var(--blue-900);color:#fff;font:inherit}
+.bform input:focus,.bform select:focus,.bform textarea:focus{outline:2px solid var(--green);outline-offset:1px}
+.bform .fehler input,.bform .fehler select,.bform input.fehler,.bform select.fehler{border-color:#f08a6c}
+.wahl{display:flex;gap:.8rem;flex-wrap:wrap}
+.pill{position:relative}
+.pill input{position:absolute;opacity:0}
+.pill span{display:inline-block;padding:.6rem 1.4rem;border:2px solid var(--green);border-radius:999px;color:#fff;font-weight:600;cursor:pointer}
+.pill input:checked+span{background:var(--green);color:var(--blue-900)}
+.pill input:focus-visible+span{outline:2px solid #fff;outline-offset:2px}
+.check{display:flex!important;gap:.7rem;align-items:flex-start;margin-bottom:.8rem;cursor:pointer}
+.check input{width:1.25rem;height:1.25rem;margin-top:.2rem;flex-shrink:0;accent-color:var(--green)}
+.feldhinweis{font-size:.88rem;color:#a9bcc5}
+.formfehler{background:rgba(240,138,108,.15);border-left:4px solid #f08a6c;border-radius:10px;padding:.8rem 1rem;color:#fff}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.bform button.btn{border:0;font:inherit;font-weight:700;cursor:pointer}
+.bform button.btn[disabled]{opacity:.6;cursor:wait}
+
 footer{background:var(--blue-900);color:#9db4be;font-size:.88rem;border-top:1px solid rgba(255,255,255,.12);padding:1.3rem 0;text-align:center}
 footer a{color:#c9d8de;text-decoration:none;margin:0 .6rem}
 footer a:hover{color:var(--green)}
@@ -263,7 +287,7 @@ footer a:hover{color:var(--green)}
       <p class="sub">inkl. 19 % MwSt. · kein Abo</p>
       <p class="einf">Einführungspreis: die ersten 10 Bestellungen zahlen <b>69 €</b></p>
       <p class="sub">Ob du noch zu den ersten 10 gehörst, schreibe ich dir mit der Rechnung.</p>
-      <a class="btn" href="mailto:pferdeyoga-sg@gmx.de?subject=Bestellung%20TrainingsDoku%20Pro&amp;body=Hallo%20Susanne%2C%0A%0Aich%20bestelle%20TrainingsDoku%20Pro.%0A%0AMein%20Handy%3A%20iPhone%20/%20Android%0A%0AFirma%20oder%20Praxisname%3A%0AMeine%20T%C3%A4tigkeit%20%28z.%20B.%20Pferdetrainer%2C%20Pferdephysiotherapeut%2C%20Pferdeosteopath%29%3A%0ARechnungsadresse%3A%0AUSt-IdNr.%20%28falls%20vorhanden%29%3A%0A%0AIch%20bestelle%20als%20Unternehmer%20im%20Rahmen%20meiner%20gewerblichen%20oder%20selbstst%C3%A4ndigen%20beruflichen%20T%C3%A4tigkeit%20und%20nicht%20als%20Verbraucher%20im%20Sinne%20des%20%C2%A7%2013%20BGB.%0A%0ADie%20AGB%20und%20die%20Lizenzbedingungen%20f%C3%BCr%20TrainingsDoku%20Pro%20habe%20ich%20gelesen%20und%20akzeptiere%20sie.%0A%0AMir%20ist%20bekannt%2C%20dass%20ich%20f%C3%BCr%20den%20Datenschutz%20gegen%C3%BCber%20meinen%20eigenen%20Kunden%20selbst%20verantwortlich%20bin.%0A%0AViele%20Gr%C3%BC%C3%9Fe%0A">Per E-Mail bestellen</a>
+      <a class="btn" href="#formular">Zum Bestellformular</a>
       <p class="hinweis"><strong>Nur für Unternehmer.</strong> Mit der Bestellung bestätigst du, dass du als Unternehmer im Rahmen deiner gewerblichen oder selbstständigen beruflichen Tätigkeit kaufst und nicht als Verbraucher im Sinne des § 13 BGB.</p>
       <p class="hinweis">Es gelten die <a href="recht/AGB_TrainingsDoku_Pro.pdf" target="_blank">AGB TrainingsDoku Pro</a> und die <a href="recht/Lizenz_TrainingsDoku_Pro.pdf" target="_blank">Lizenz- und Nutzungsbedingungen</a>. Hinweise zum Umgang mit deinen Daten stehen in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
     </div>
@@ -271,16 +295,74 @@ footer a:hover{color:var(--green)}
       <p class="kicker">Bestellung</p>
       <h2>So kommst du an die App</h2>
       <ol class="steps">
-        <li><strong>Bestell-Mail schicken.</strong> Der Knopf öffnet eine vorbereitete E-Mail. Du trägst Firma oder Praxisname, deine Tätigkeit und die Rechnungsadresse ein.</li>
+        <li><strong>Bestellformular ausfüllen.</strong> Du wählst iPhone oder Android, trägst deine Rechnungsangaben ein und bestätigst AGB, Lizenzbedingungen und die gewerbliche Nutzung.</li>
         <li><strong>Rechnung erhalten.</strong> Ich schicke dir die Rechnung per E-Mail. Bezahlt wird per Vorkasse (Überweisung).</li>
         <li><strong>App bekommen.</strong> Nach Zahlungseingang erhältst du die App mit Anleitung per E-Mail, in der Regel innerhalb von 48 Stunden.</li>
         <li><strong>Einrichten und loslegen.</strong> Du folgst der Anleitung für iPhone oder Android und legst die App auf deinen Startbildschirm. Das dauert etwa 30 Minuten.</li>
       </ol>
       <div class="kasten"><p><strong>Hinweis:</strong> Die App wird nicht über den App Store vertrieben. Du richtest die Anwendung selbst ein und musst dafür einmalig ein wenig basteln. Mit der zugehörigen Anleitung dauert das etwa 30 min, danach läuft sie.</p></div>
-      <p class="hinweis">Der Knopf funktioniert nicht? Schreib mir an <a href="mailto:pferdeyoga-sg@gmx.de">pferdeyoga-sg@gmx.de</a> mit dem Betreff „Bestellung TrainingsDoku Pro“.</p>
     </div>
   </div>
 </section>
+
+<section id="formular">
+  <div class="wrap">
+    <p class="kicker">Bestellformular</p>
+    <h2>TrainingsDoku Pro bestellen</h2>
+    <p>Felder mit * sind Pflichtangaben. Nach dem Absenden schicke ich dir die Rechnung per E-Mail.</p>
+    <form id="bestellform" class="bform" novalidate>
+      <fieldset>
+        <legend>Dein Smartphone *</legend>
+        <p class="feldhinweis">Danach richtet sich die Einrichtungsanleitung, die du bekommst.</p>
+        <div class="wahl">
+          <label class="pill"><input type="radio" name="fi-radio-smartphone" value="iPhone (Apple)" required><span>iPhone (Apple)</span></label>
+          <label class="pill"><input type="radio" name="fi-radio-smartphone" value="Android" required><span>Android</span></label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Angaben für die Rechnung</legend>
+        <div class="grid2">
+          <label class="voll">Firma oder Praxisname *<input type="text" name="fi-sender-company" autocomplete="organization" required></label>
+          <label>Vorname *<input type="text" name="fi-sender-firstName" autocomplete="given-name" required></label>
+          <label>Nachname *<input type="text" name="fi-sender-lastName" autocomplete="family-name" required></label>
+          <label class="voll">Straße und Hausnummer *<input type="text" name="fi-sender-address" autocomplete="street-address" required></label>
+          <label>PLZ *<input type="text" name="fi-sender-postcode" autocomplete="postal-code" inputmode="numeric" required></label>
+          <label>Ort *<input type="text" name="fi-sender-city" autocomplete="address-level2" required></label>
+          <label>Land *<input type="text" name="fi-sender-country" autocomplete="country-name" value="Deutschland" required></label>
+          <label>USt-IdNr. (falls vorhanden)<input type="text" name="fi-text-ustid" placeholder="z. B. DE123456789"></label>
+          <label>E-Mail für Rechnung und Lieferung *<input type="email" name="fi-sender-email" autocomplete="email" required></label>
+          <label>Telefon (optional)<input type="tel" name="fi-sender-phone" autocomplete="tel"></label>
+          <label class="voll">Deine Tätigkeit *
+            <select name="fi-select-taetigkeit" required>
+              <option value="">Bitte wählen</option>
+              <option>Pferdetrainer</option>
+              <option>Pferdephysiotherapeut</option>
+              <option>Pferdeosteopath</option>
+              <option>Andere Tätigkeit am Pferd</option>
+            </select>
+          </label>
+          <label class="voll">Nachricht an mich (optional)<textarea name="fi-text-nachricht" rows="3"></textarea></label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Bestätigungen *</legend>
+        <label class="check"><input type="checkbox" name="fi-checkbox-gewerblich" value="Ich bestelle als Unternehmer im Rahmen meiner gewerblichen oder selbstständigen beruflichen Tätigkeit und nicht als Verbraucher im Sinne des § 13 BGB." required><span>Ich bestelle als Unternehmer im Rahmen meiner gewerblichen oder selbstständigen beruflichen Tätigkeit und nicht als Verbraucher im Sinne des § 13 BGB.</span></label>
+        <label class="check"><input type="checkbox" name="fi-checkbox-agb_lizenz" value="Ich habe die AGB TrainingsDoku Pro und die Lizenz- und Nutzungsbedingungen (Stand 12.11.2026) gelesen und akzeptiere sie." required><span>Ich habe die <a href="recht/AGB_TrainingsDoku_Pro.pdf" target="_blank">AGB TrainingsDoku Pro</a> und die <a href="recht/Lizenz_TrainingsDoku_Pro.pdf" target="_blank">Lizenz- und Nutzungsbedingungen</a> gelesen und akzeptiere sie.</span></label>
+      </fieldset>
+      <div class="hp" aria-hidden="true"><label>Bitte leer lassen<input type="text" name="hp_website" tabindex="-1" autocomplete="off"></label></div>
+      <p class="feldhinweis">Deine Angaben verwende ich nur für die Bestellung und die Rechnung. Das Formular wird über den Dienst Forminit (Server in der EU) übermittelt. Näheres steht in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+      <p id="formfehler" class="formfehler" role="alert" hidden></p>
+      <button type="submit" class="btn" id="absenden">Bestellung absenden</button>
+      <p class="feldhinweis">Die Bestellung ist erst verbindlich, wenn du bezahlt hast und ich sie per E-Mail bestätige (§ 4 AGB).</p>
+    </form>
+    <div id="danke" class="kasten" hidden tabindex="-1">
+      <h3>Danke, deine Bestellung ist angekommen.</h3>
+      <p>Ich schicke dir in den nächsten Tagen die Rechnung an <strong id="danke-mail"></strong>. Nach Zahlungseingang bekommst du die App mit der Anleitung für <strong id="danke-geraet"></strong>.</p>
+      <p>Falls du in drei Werktagen nichts von mir hörst, schau bitte im Spam-Ordner nach oder schreib mir an <a href="mailto:pferdeyoga-sg@gmx.de">pferdeyoga-sg@gmx.de</a>.</p>
+    </div>
+  </div>
+</section>
+
 
 </main>
 
@@ -292,5 +374,45 @@ footer a:hover{color:var(--green)}
   </div>
 </footer>
 
+<script>
+(function(){
+  // Formular-ID aus dem Forminit-Konto (Public mode). Leer = Formular noch nicht aktiv.
+  var FORM_ID = '';
+  var f=document.getElementById('bestellform'), err=document.getElementById('formfehler'), btn=document.getElementById('absenden');
+  function fehler(t){err.textContent=t;err.hidden=false;err.scrollIntoView({behavior:'smooth',block:'center'});}
+  function ladeSdk(){return new Promise(function(ok,nok){
+    if(window.Forminit) return ok();
+    var sc=document.createElement('script'); sc.src='https://forminit.com/sdk/v1/forminit.js';
+    sc.onload=ok; sc.onerror=nok; document.head.appendChild(sc);});}
+  f.addEventListener('submit',function(e){
+    e.preventDefault(); err.hidden=true;
+    f.querySelectorAll('.fehler').forEach(function(el){el.classList.remove('fehler');});
+    var fehlt=[];
+    if(!f.querySelector('input[name="fi-radio-smartphone"]:checked')) fehlt.push('iPhone oder Android');
+    f.querySelectorAll('input[required]:not([type=radio]):not([type=checkbox]),select[required]').forEach(function(el){
+      if(!el.value.trim()||!el.checkValidity()){el.classList.add('fehler');fehlt.push(el.parentNode.firstChild.textContent.replace('*','').trim());}});
+    if(!f.querySelector('input[name="fi-checkbox-gewerblich"]').checked) fehlt.push('Bestätigung als Unternehmer');
+    if(!f.querySelector('input[name="fi-checkbox-agb_lizenz"]').checked) fehlt.push('Bestätigung AGB und Lizenzbedingungen');
+    if(fehlt.length){fehler('Bitte noch ergänzen: '+fehlt.join(', ')+'.');return;}
+    var data=new FormData(f);
+    if(data.get('hp_website')){f.hidden=true;document.getElementById('danke').hidden=false;return;}
+    data.delete('hp_website');
+    if(!FORM_ID){fehler('Das Formular ist gerade nicht aktiv. Bitte schreib mir an pferdeyoga-sg@gmx.de.');return;}
+    btn.disabled=true; btn.textContent='Wird gesendet …';
+    ladeSdk().then(function(){
+      var fi=new Forminit(); return fi.submit(FORM_ID,data);
+    }).then(function(r){
+      if(r&&r.error) throw r.error;
+      document.getElementById('danke-mail').textContent=data.get('fi-sender-email');
+      document.getElementById('danke-geraet').textContent=data.get('fi-radio-smartphone');
+      f.hidden=true; var d=document.getElementById('danke'); d.hidden=false; d.focus();
+      d.scrollIntoView({behavior:'smooth',block:'center'});
+    }).catch(function(){
+      btn.disabled=false; btn.textContent='Bestellung absenden';
+      fehler('Das Senden hat nicht geklappt. Bitte versuch es in einer Minute noch einmal oder schreib mir an pferdeyoga-sg@gmx.de.');
+    });
+  });
+})();
+</script>
 </body>
 </html>
