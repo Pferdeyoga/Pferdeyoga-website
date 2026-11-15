@@ -110,7 +110,6 @@ table.prices td:first-child{padding-right:1rem;color:#fff;font-weight:600;width:
 .check input{width:1.25rem;height:1.25rem;margin-top:.2rem;flex-shrink:0;accent-color:var(--green)}
 .feldhinweis{font-size:.88rem;color:#a9bcc5}
 .formfehler{background:rgba(240,138,108,.15);border-left:4px solid #f08a6c;border-radius:10px;padding:.8rem 1rem;color:#fff}
-.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .bform button.btn{border:0;font:inherit;font-weight:700;cursor:pointer}
 .bform button.btn[disabled]{opacity:.6;cursor:wait}
 
@@ -349,7 +348,6 @@ footer a:hover{color:var(--green)}
         <label class="check"><input type="checkbox" name="fi-checkbox-gewerblich" value="Ich bestelle als Unternehmer im Rahmen meiner gewerblichen oder selbstständigen beruflichen Tätigkeit und nicht als Verbraucher im Sinne des § 13 BGB." required><span>Ich bestelle als Unternehmer im Rahmen meiner gewerblichen oder selbstständigen beruflichen Tätigkeit und nicht als Verbraucher im Sinne des § 13 BGB.</span></label>
         <label class="check"><input type="checkbox" name="fi-checkbox-agb_lizenz" value="Ich habe die AGB TrainingsDoku Pro und die Lizenz- und Nutzungsbedingungen (Stand 12.11.2026) gelesen und akzeptiere sie." required><span>Ich habe die <a href="recht/AGB_TrainingsDoku_Pro.pdf" target="_blank">AGB TrainingsDoku Pro</a> und die <a href="recht/Lizenz_TrainingsDoku_Pro.pdf" target="_blank">Lizenz- und Nutzungsbedingungen</a> gelesen und akzeptiere sie.</span></label>
       </fieldset>
-      <div class="hp" aria-hidden="true"><label>Bitte leer lassen<input type="text" name="hp_website" tabindex="-1" autocomplete="off"></label></div>
       <p class="feldhinweis">Deine Angaben verwende ich nur für die Bestellung und die Rechnung. Das Formular wird über den Dienst Forminit (Server in der EU) übermittelt. Näheres steht in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
       <p id="formfehler" class="formfehler" role="alert" hidden></p>
       <button type="submit" class="btn" id="absenden">Bestellung absenden</button>
@@ -395,8 +393,6 @@ footer a:hover{color:var(--green)}
     if(!f.querySelector('input[name="fi-checkbox-agb_lizenz"]').checked) fehlt.push('Bestätigung AGB und Lizenzbedingungen');
     if(fehlt.length){fehler('Bitte noch ergänzen: '+fehlt.join(', ')+'.');return;}
     var data=new FormData(f);
-    if(data.get('hp_website')){f.hidden=true;document.getElementById('danke').hidden=false;return;}
-    data.delete('hp_website');
     if(!FORM_ID){fehler('Das Formular ist gerade nicht aktiv. Bitte schreib mir an pferdeyoga-sg@gmx.de.');return;}
     btn.disabled=true; btn.textContent='Wird gesendet …';
     ladeSdk().then(function(){
