@@ -327,10 +327,10 @@ footer a:hover{color:var(--green)}
           <label class="voll">Straße und Hausnummer *<input type="text" name="fi-sender-address" autocomplete="street-address" required></label>
           <label>PLZ *<input type="text" name="fi-sender-postcode" autocomplete="postal-code" inputmode="numeric" required></label>
           <label>Ort *<input type="text" name="fi-sender-city" autocomplete="address-level2" required></label>
-          <label>Land *<input type="text" name="fi-sender-country" autocomplete="country-name" value="Deutschland" required></label>
+          <label>Land *<input type="text" name="fi-text-land" autocomplete="country-name" value="Deutschland" required></label>
           <label>USt-IdNr. (falls vorhanden)<input type="text" name="fi-text-ustid" placeholder="z. B. DE123456789"></label>
           <label>E-Mail für Rechnung und Lieferung *<input type="email" name="fi-sender-email" autocomplete="email" required></label>
-          <label>Telefon (optional)<input type="tel" name="fi-sender-phone" autocomplete="tel"></label>
+          <label>Telefon (optional)<input type="tel" name="fi-text-telefon" autocomplete="tel"></label>
           <label class="voll">Deine Tätigkeit *
             <select name="fi-select-taetigkeit" required>
               <option value="">Bitte wählen</option>
@@ -393,19 +393,21 @@ footer a:hover{color:var(--green)}
     if(!f.querySelector('input[name="fi-checkbox-agb_lizenz"]').checked) fehlt.push('Bestätigung AGB und Lizenzbedingungen');
     if(fehlt.length){fehler('Bitte noch ergänzen: '+fehlt.join(', ')+'.');return;}
     var data=new FormData(f);
+    Array.from(data.keys()).forEach(function(k){if(typeof data.get(k)==='string'&&!data.get(k).trim())data.delete(k);});
     if(!FORM_ID){fehler('Das Formular ist gerade nicht aktiv. Bitte schreib mir an pferdeyoga-sg@gmx.de.');return;}
     btn.disabled=true; btn.textContent='Wird gesendet …';
     ladeSdk().then(function(){
       var fi=new Forminit(); return fi.submit(FORM_ID,data);
     }).then(function(r){
-      if(r&&r.error) throw r.error;
+      if(r&&r.error){console.error('Forminit',r.error);throw r.error;}
       document.getElementById('danke-mail').textContent=data.get('fi-sender-email');
       document.getElementById('danke-geraet').textContent=data.get('fi-radio-smartphone');
       f.hidden=true; var d=document.getElementById('danke'); d.hidden=false; d.focus();
       d.scrollIntoView({behavior:'smooth',block:'center'});
-    }).catch(function(){
+    }).catch(function(x){
+      var code=(x&&(x.code||x.message))?' (Fehler: '+(x.code||x.message)+')':'';
       btn.disabled=false; btn.textContent='Bestellung absenden';
-      fehler('Das Senden hat nicht geklappt. Bitte versuch es in einer Minute noch einmal oder schreib mir an pferdeyoga-sg@gmx.de.');
+      fehler('Das Senden hat nicht geklappt. Bitte versuch es in einer Minute noch einmal oder schreib mir an pferdeyoga-sg@gmx.de.'+code);
     });
   });
 })();
